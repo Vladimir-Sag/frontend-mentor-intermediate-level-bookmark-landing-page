@@ -3,7 +3,7 @@
 ![Design preview for the Bookmark landing page coding challenge](./preview.jpg)
 
 ## 🎯 Live Demo
-🔗 [View Live Demo](https://your-live-site-url.com)  
+🔗 [View Live Demo](https://vladimir-sag.github.io/frontend-mentor-intermediate-level-bookmark-landing-page/)  
 📦 [GitHub Repository](https://github.com/Vladimir-Sag/frontend-mentor-intermediate-level-bookmark-landing-page)
 
 ---
