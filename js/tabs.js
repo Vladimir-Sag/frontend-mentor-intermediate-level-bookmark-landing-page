@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded",()=>{
     const links = document.querySelectorAll('.tab-link');
     const panels = document.querySelectorAll('.tab-panel');
+    if(!links.length||!panels.length) return;
 
     function switchTab(selectedTab){
         links.forEach(link=>{
-            link.classList.remove('active')
-            link.setAttribute('aria-selected','false')
+            const isSelected = link===selectedTab
+            link.classList.toggle('active',isSelected)
+            link.setAttribute('aria-selected',isSelected)
+            link.setAttribute('tabindex',isSelected?'0':'-1')
         })
         panels.forEach(panel=>{
             panel.classList.remove('active')
         })
-        selectedTab.classList.add('active');
-        selectedTab.setAttribute('aria-selected', 'true');
 
         const tabNumber = selectedTab.dataset.tab;
         const activePanel = document.querySelector(`.tab-panel[data-tab="${tabNumber}"]`)
@@ -40,14 +41,6 @@ document.addEventListener("DOMContentLoaded",()=>{
             }
         })
     })
-    links.forEach(link=>{
-        const isActive = link.classList.contains('active')
-        link.setAttribute('aria-selected',isActive?'true':'false')
-        if(isActive){
-            link.setAttribute('tabindex','0')
-        }else{
-            link.setAttribute('tabindex','-1')
-        }
-    })
-
+    const activeLink = document.querySelector('.tab-link.active');
+    if(activeLink) switchTab(activeLink)
 })

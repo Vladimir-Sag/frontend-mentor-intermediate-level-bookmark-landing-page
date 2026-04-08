@@ -3,7 +3,12 @@ document.addEventListener('DOMContentLoaded',()=>{
     const inputForm = document.querySelector('.form-section-input')
     const errorText = document.querySelector('.error-message')
     const inputContainer = document.querySelector('.input-container')
-    form.addEventListener('submit',(e)=>{
+
+    if (!form || !inputForm || !errorText || !inputContainer) {
+        console.error('Required form elements not found');
+        return; 
+    }
+    form?.addEventListener('submit',(e)=>{
         const emailValue  = inputForm.value.trim()
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
         if(!emailPattern.test(emailValue)){

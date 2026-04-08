@@ -29,10 +29,10 @@ body{
 }
 .hidden-text{
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 0.05556rem;
+    height: 0.05556rem;
     padding: 0;
-    margin: -1px;
+    margin: -0.05556rem;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
@@ -41,7 +41,7 @@ body{
 .social--icon{
     fill: var(--Grey-50);
 }
-.social--icon :hover{
+.social--icon:hover{
     fill: var(--Red-400);
 }
 /* Header */
@@ -74,7 +74,7 @@ dialog *{
     background-color: var(--Blue-950);
 }
 .modal-header-svg{
-    fill: white !important;
+    fill: white;
 }
 dialog .modal-links li{
     border-top: 1px solid var(--Grey-50);
@@ -87,7 +87,7 @@ dialog a{
     display: block;
     padding-block: 21px;
     padding-inline-end: 12px;
-    width: (100%-12px);
+    width: calc(100%-12px);
     color:var(--Grey-50);
     text-transform: uppercase;
     font-size: 1.056rem;
@@ -95,14 +95,14 @@ dialog a{
     font-weight: 400;
 }
 dialog a:not([aria-label="Home"]):hover{
-    color: var(--blue);
+    color: var(--Blue-950);
     background-color: var(--Grey-50);
 }
 dialog button{
     border: none;
     outline: none;
 }
-nav[aria-label="main-menu"]{
+nav[aria-label="Mobile-menu"]{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -114,7 +114,7 @@ nav[aria-label="main-menu"]{
     
 }
 dialog li:last-child{
-    padding: 26px 1px 0 0;
+    padding: 2px 1px 0 0;
 }
 .modal-btn-link{
     display: inline-block;
@@ -125,6 +125,7 @@ dialog li:last-child{
     padding: 11px 0;
     border: 1px solid var(--Grey-50);
     border-radius: 4px;
+    margin-block-start: 20px;
 }
 .modal-links{
     display: flex;
@@ -134,8 +135,7 @@ dialog li:last-child{
     margin-block-start:13px;
 }
 .modal-social-media{
-    margin-block-start:auto;
-    margin-block-end: clamp(20px,3.2vh,200px);
+    margin-block:auto 0;
     display: flex;
     justify-content: center;
     gap:40px;
@@ -281,9 +281,14 @@ dialog li:last-child{
     text-align: center;
     position: relative;
 }
-.features-links a{
-    padding-inline-end: 1px;
-    letter-spacing: -0.033em;
+
+.tab-link{
+    margin: auto;
+    border: none;
+    background-color: inherit;
+    font-size: 0.944rem;
+    letter-spacing: 0.001em;
+    color:var(--Blue-950)
 }
 .tab-link.active::after{
     content: '';
@@ -385,8 +390,8 @@ dialog li:last-child{
     box-sizing: border-box;
     padding-block: 88px 24px;
     margin: auto;
-    box-shadow: -17px 17px 10px -10px rgba(0,0,0, 0.1),
-                17px 17px 10px -10px rgba(0,0,0, 0.1);
+    box-shadow: -17px 17px 10px -10px var(--Grey-50),
+                17px 17px 10px -10px var(--Grey-50);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -478,7 +483,7 @@ dialog li:last-child{
 	transform: rotate(135deg);
     color: var(--Blue-600);
 }
-.faq-item[open] .faq-question .chevron::before{
+.faq-item[open] .chevron::before{
     top: 10px;
 	transform: rotate(-45deg);
     color: var(--Red-400);

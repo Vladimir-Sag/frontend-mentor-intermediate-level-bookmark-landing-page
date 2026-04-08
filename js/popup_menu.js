@@ -1,13 +1,10 @@
 document.addEventListener('DOMContentLoaded',()=>{
-    const links = document.querySelectorAll('a')
+    const links = document.querySelectorAll('a[href="#"]')
 
     links.forEach(link=>{
         link.addEventListener('click',(e)=>{
             e.preventDefault()
             const content = link.textContent
-            if(content ==='Simple Bookmarking' || content ==='Speedy Searching' || content ==='Easy Sharing') {
-                return ;
-            }
             const oldNotification =document.querySelector('.popup-menu')
             if(oldNotification) oldNotification.remove()
             const modal = document.createElement('div')
